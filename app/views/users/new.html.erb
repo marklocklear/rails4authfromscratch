@@ -24,5 +24,11 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </div>
+  <%= f.fields_for :organization do |o| %>
+		<div class="field">
+			<%= o.label 'Organization' %><br />
+			<%= o.text_field :name %>
+		</div>
+  <% end %>
   <div class="actions"><%= f.submit "Sign Up" %></div>
 <% end %>
