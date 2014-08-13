@@ -5,7 +5,12 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    #@tasks = Task.all
+		organization = current_user.organization
+		#use this if you want all tasks associated with a user
+    @tasks = Task.where(user_id: current_user)
+		#user this if you want all tasks associated with a users organization
+		#@tasks = organization.tasks
   end
 
   # GET /tasks/1
