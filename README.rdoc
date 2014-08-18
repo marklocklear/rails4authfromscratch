@@ -7,7 +7,7 @@ Things you may want to cover:
 
 * Ruby version
 
-* System dependencies
+* 2nd commit: added organization model associated with user; laying the groupwork for a multi-tenant app. when user signs up, they create an organizatoin. This is problematic because there is a one-to-one ratio of user and organization. Ideally would like multiple users per org.
 
 * Configuration
 
