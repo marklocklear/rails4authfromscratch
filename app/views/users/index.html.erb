@@ -12,6 +12,9 @@
         <td><%= user.email %></td>
         <td><%= user.organization.name %></td>
        	<td><%= link_to "Edit User", edit_user_path(user) %></td>
+				 <% unless user.email == current_user.email %>
+          <td><%= link_to "Delete User", user, :confirm => "Are you sure?", :method => :delete %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

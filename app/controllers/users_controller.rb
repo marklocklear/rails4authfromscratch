@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 			organization = current_user.organization
 			@user.organization = organization
 			if @user.save
-				redirect_to root_url, notice: "User Created!"
+				redirect_to users_path, notice: "User Created!"
 			else
 				render "add"
 			end
@@ -44,7 +44,13 @@ class UsersController < ApplicationController
       render :action => 'edit'
     end
   end
-
+	def destroy
+    @user = User.find(params[:id])
+    if @user.destroy
+      flash[:notice] = "Successfully deleted User."
+      redirect_to users_path
+    end
+	end
 
 	def add
 		@user = User.new
